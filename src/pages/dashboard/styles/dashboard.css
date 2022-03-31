@@ -567,12 +567,13 @@
 }
 #area-containers .smaller-block .container-ranking .container-chart {
     width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100% - 30px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    padding: 50px;
+    padding: 25px;
+    overflow: hidden;
 }
 
 

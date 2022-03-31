@@ -9,6 +9,7 @@ import Modal from "../../components/Modal";
 
 //STYLES
 import './styles/page.css';
+import './styles/responsive-page.css';
 
 //API
 import api from "../../api";
@@ -22,6 +23,7 @@ function Posts() {
     //BOOLEANS
     const [modalUser, setModalUser] = useState(false);
     const [modalPost, setModalPost] = useState(false);
+    const [modalComments, setModalComments] = useState(false);
     //PARAMS
     const [postId, setPostId] = useState(null);
     const [userId, setUserId] = useState(null);
@@ -45,12 +47,36 @@ function Posts() {
                 progress: undefined,
             });
         });
+        api.get("/users")
+        .then((response) => {
+            setUsers(response.data);
+        })
+        .catch((err) => {
+            console.error("falha ao obter lista de usuários: " + err);
+            toast.error('falha ao obter lista de usuários', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        });
     }, []);
 
     //BUSCAR USUÁRIO
     function searchingFor(keyword) {
         return function(item) {              
             return item.title.toLowerCase().includes(keyword.toLowerCase()) || item.body.toLowerCase().includes(keyword.toLowerCase()) || !keyword;
+        }
+    }
+
+    function getUser(keyword) {
+        return function(item) { 
+            if (item.id === keyword) {
+                return item
+            }             
         }
     }
 
@@ -66,25 +92,22 @@ function Posts() {
                     animate={{y:0, opacity:1}}
                     transition={{duration: 0.5}}
                     exit={{y: 20}}
-                    className="container">
+                    className="container posts">
                         <h3>Postagens</h3>
                         
                         <div className="filter">
-                            <input type="search" aria-label="Buscar usuário" value={keyword} onChange={(e)=>setKeyword(e.currentTarget.value)} placeholder="Buscar usuário" /> 
+                            <input type="search" aria-label="Buscar postagem" value={keyword} onChange={(e)=>setKeyword(e.currentTarget.value)} placeholder="Buscar postagem" /> 
                         </div>
 
-                        <div className="header">
-                            <div className="item name">
-                                <h4>Nome</h4>
+                        <div className="header posts">
+                            <div className="item title">
+                                <h4>Titulo</h4>
                             </div>
-                            <div className="item username">
-                                <h4>Usuário</h4>
+                            <div className="item post">
+                                <h4>Postagem</h4>
                             </div>
-                            <div className="item email">
-                                <h4>Email</h4>
-                            </div>
-                            <div className="item contact">
-                                <h4>Contato</h4>
+                            <div className="item author">
+                                <h4>Autor</h4>
                             </div>
                             <div className="item about">
                                 
@@ -95,21 +118,20 @@ function Posts() {
                             {posts.filter(searchingFor(keyword)).map((item, index)=> {
                                 return (
                                     <li key={index}>
-                                        <div className="item name">
-                                            <span>{item.name}</span>
+                                        <div className="item title">
+                                            <span>{item.title}</span>
                                         </div>
-                                        <div className="item username">
-                                            <span>{item.username}</span>
+                                        <div className="item post">
+                                            <span>{item.body}</span>
                                         </div>
-                                        <div className="item email">
-                                            <span>{item.email}</span>
-                                        </div>
-                                        <div className="item contact">
-                                            <span>{item.phone}</span>
+                                        <div className="item author">
+                                        {users.filter(getUser(item.userId)).map(({username})=>{
+                                            return <p>{username}</p>
+                                        })}
                                         </div>
                                         <div className="item about">
-                                            <button className="option" onClick={()=>{setTypeQuery('m');setModalPost(true);setPostId(item.id)}}><i class="fi fi-rr-document"></i></button>
-                                            <button className="option highlighted" onClick={()=>{setModalUser(true);setUserId(item.id)}} ><span>Sobre</span></button>
+                                            {/* <button className="option" onClick={()=>{setTypeQuery('m');setModalPost(true);setPostId(item.id)}}><i class="fi fi-rr-document"></i></button> */}
+                                            <button className="option highlighted" onClick={()=>{setModalComments(true);setPostId(item.id)}} ><span>Comentários</span></button>
                                         </div>
                                     </li>
                                 )
@@ -135,6 +157,14 @@ function Posts() {
                 size="medium"
                 postId={postId}
                 typeQuery={typeQuery}
+            />
+            <Modal 
+                open={modalComments} 
+                trigger={setModalComments}
+                type="comments"
+                size="medium"
+                postId={postId}
+                typeQuery={'s'}
             />
         </section>
     )

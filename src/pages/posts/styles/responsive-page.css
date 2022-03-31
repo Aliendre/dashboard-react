@@ -1,0 +1,5 @@
+@media (min-width: 1366px) and (max-width: 1680px) {
+    #area-page .container ul.list-users li {
+        font-size: 12px;
+    }
+}

@@ -45,7 +45,7 @@
 }
 
 #area-page .container .header {
-    width: 100%;
+    width: calc(100% - 5px);
     height: 60px;
     display: flex;
     padding: 0 30px;
@@ -59,30 +59,27 @@
 #area-page .container .header .item h4 {
     color: var(--primary-color);
 }
-#area-page .container .header .item.name {
+#area-page .container .header.posts .item.title {
+    width: 35%;
+}
+#area-page .container .header.posts .item.post {
     width: 40%;
 }
-#area-page .container .header .item.username {
-    width: 20%;
-}
-#area-page .container .header .item.email {
+#area-page .container .header.posts .item.author {
     width: 15%;
 }
-#area-page .container .header .item.contact {
-    width: 15%;
-}
-#area-page .container .header .item.about {
+#area-page .container .header.posts .item.about {
     width: 10%;
 }
 
 
-#area-page .container ul.list-users {
+#area-page .container.posts ul.list-users {
     width: 100%;
     height: calc(100% - 200px);
     overflow-y: auto;
     padding: 0 30px;
 }
-#area-page .container ul.list-users li {
+#area-page .container.posts ul.list-users li {
     width: 100%;
     height: 60px;
     display: flex;
@@ -90,35 +87,47 @@
     font-weight: 600;
     color: var(--font-color);
 }
-#area-page .container ul.list-users li .item {
+#area-page .container.posts ul.list-users li .item {
     width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
+    padding-right: 10px;
 }
-#area-page .container ul.list-users li .item.name {
+#area-page .container.posts ul.list-users li .item.title {
+    width: 35%;
+    padding-right: 10px !important;
+    color: red;
+}
+#area-page .container.posts ul.list-users li .item.title span {
+    color: var(--primary-color);
+}
+#area-page .container.posts ul.list-users li .item.post {
     width: 40%;
 }
-#area-page .container ul.list-users li .item.username {
-    width: 20%;
-}
-#area-page .container ul.list-users li .item.email {
+#area-page .container.posts ul.list-users li .item.author {
     width: 15%;
 }
-#area-page .container ul.list-users li .item.contact {
-    width: 15%;
-}
-#area-page .container ul.list-users li .item.about {
+#area-page .container.posts ul.list-users li .item.about {
     width: 10%;
 }
+#area-page .container.posts ul.list-users li span {
+    width: 98% !important;
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#area-page .container.posts ul.list-users li span::first-letter {
+    text-transform: capitalize;
+}
 
-
-#area-page .container ul.list-users li .item.about button.option {
+#area-page .container.posts ul.list-users li .item.about button.option {
     margin: 0 5px;
     border: none;
     color: var(--primary-color);
     background-color: transparent;
-    width: 40px;
+    width: 140px !important;
     height: 30px;
     border-radius: 5px;
     display: flex;
@@ -127,6 +136,9 @@
     cursor: pointer;
     padding: 0 3px;
     font-family: 'Montserrat';
+    font-size: 12px;
+    text-overflow: unset !important;
+    overflow: visible;
 }
 #area-page .container ul.list-users li .item.about button.option.highlighted {
     width: 70px;

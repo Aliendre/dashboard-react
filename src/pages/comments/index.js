@@ -14,7 +14,7 @@ import './styles/responsive-page.css';
 //API
 import api from "../../api";
 
-function Users() {
+function Comments() {
 
     //STATE
     const [users, setUsers] = useState([]);
@@ -29,7 +29,7 @@ function Users() {
 
 
     useEffect(() => {
-        api.get("/users")
+        api.get("/comments")
         .then((response) => {
             setUsers(response.data);
         })
@@ -67,55 +67,11 @@ function Users() {
                     transition={{duration: 0.5}}
                     exit={{y: 20}}
                     className="container">
-                        <h3>Usuários</h3>
+                        <h3>Comentários</h3>
                         
                         <div className="filter">
-                            <input type="search" aria-label="Buscar usuário" value={keyword} onChange={(e)=>setKeyword(e.currentTarget.value)} placeholder="Buscar usuário" /> 
+                            <input type="search" aria-label="Buscar comentários" value={keyword} onChange={(e)=>setKeyword(e.currentTarget.value)} placeholder="Buscar comentários" /> 
                         </div>
-
-                        <div className="header">
-                            <div className="item name">
-                                <h4>Nome</h4>
-                            </div>
-                            <div className="item username">
-                                <h4>Usuário</h4>
-                            </div>
-                            <div className="item email">
-                                <h4>Email</h4>
-                            </div>
-                            <div className="item contact">
-                                <h4>Contato</h4>
-                            </div>
-                            <div className="item about">
-                                
-                            </div>
-                        </div>
-
-                        <ul className="list-users">
-                            {users.filter(searchingFor(keyword)).map((item, index)=> {
-                                return (
-                                    <li key={index}>
-                                        <div className="item name">
-                                            <span>{item.name}</span>
-                                        </div>
-                                        <div className="item username">
-                                            <span>{item.username}</span>
-                                        </div>
-                                        <div className="item email">
-                                            <span>{item.email}</span>
-                                        </div>
-                                        <div className="item contact">
-                                            <span>{item.phone}</span>
-                                        </div>
-                                        <div className="item about">
-                                            <button className="option" onClick={()=>{setTypeQuery('m');setModalPost(true);setPostId(item.id)}}><i class="fi fi-rr-document"></i></button>
-                                            <button className="option highlighted" onClick={()=>{setModalUser(true);setUserId(item.id)}} ><span>Sobre</span></button>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                            
-                        </ul>
 
                     </motion.div>
                 </div>
@@ -140,4 +96,4 @@ function Users() {
     )
 }
 
-export default Users;
+export default Comments;

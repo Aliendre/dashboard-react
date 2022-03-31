@@ -53,6 +53,10 @@
         margin-right: 10px;
     }
     #area-containers .smaller-block .container-ranking .container-chart {
-        padding: 10px;
+        padding: 0;
+        height: calc(100% - 30px);
+    }
+    #area-containers .smaller-block .container-ranking .container-chart canvas {
+        margin-top: -70px !important;
     }
 }

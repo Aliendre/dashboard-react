@@ -148,6 +148,7 @@ function Dashboard() {
                 type="comments"
                 size="medium"
                 postId={postId}
+                typeQuery={'s'}
             />
             <Modal 
                 open={modalPost} 
