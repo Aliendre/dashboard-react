@@ -1,0 +1,104 @@
+#area-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#area-modal .container-modal {
+    width: 60%;
+    height: auto;
+    min-height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+#area-modal .container-modal.small {
+    width: 40%;
+    min-width: 480px;
+}
+#area-modal .container-modal.medium {
+    width: 50%;
+    min-width: 520px;
+}
+
+#area-modal .container-modal .content-modal {
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+#area-modal .container-modal .content-modal .personal {
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #ebebeb;
+}
+#area-modal .container-modal .content-modal .personal .section {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+}
+#area-modal .container-modal .content-modal .personal .section .img-user {
+    width: 70px;
+    min-height: 70px;
+    border-radius: 8px;
+    background-color: var(--secondary-color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+#area-modal .container-modal .content-modal .personal .section h4 {
+    padding: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+#area-modal .container-modal .content-modal .personal .section h6 {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#area-modal .container-modal .content-modal .personal .info-section,
+#area-modal .container-modal .content-modal .address .info-section {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#area-modal .container-modal .content-modal .personal .info-section .block,
+#area-modal .container-modal .content-modal .address .info-section .block {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 15px 0;
+    margin: 5px 0;
+}
+#area-modal .container-modal .content-modal .personal .info-section .block h5,
+#area-modal .container-modal .content-modal .address .info-section .block h5 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 17px;
+}
+#area-modal .container-modal .content-modal .personal .info-section .block p,
+#area-modal .container-modal .content-modal .address .info-section .block p {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+#area-modal .container-modal .content-modal .address {
+    width: 50%;
+    height: 100%;
+    padding: 0 0 0 20px;
+}

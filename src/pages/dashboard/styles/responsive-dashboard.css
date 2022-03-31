@@ -1,0 +1,58 @@
+@media (min-width: 1440px) and (max-width: 1679px) {
+    #area-containers .bigger-block .container-posts ul.list-posts li .post h5 {
+        width: 90%;
+        font-size: 15px;
+        padding: 8px 0;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .post p {
+        width: 90%;
+        font-size: 13px;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .actions button.option {
+        height: 35px;
+        font-size: 10.5px;
+        white-space: nowrap;
+    }
+    #area-containers .smaller-block .container-ranking .container-chart {
+        padding: 0px;
+    }
+}
+@media (min-width: 1366px) and (max-width: 1439px) {
+    #area-containers .bigger-block .container-posts .filter {
+        height: 35px;
+    }
+    #area-containers .bigger-block .container-posts .list-header .item.post {
+        width: calc(65% - 76px);
+    }
+    #area-containers .bigger-block .container-posts .list-header .item.actions {
+        width: 20%;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .post h5 {
+        width: 85%;
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .post {
+        width: calc(65% - 70px);
+        padding-bottom: 15px;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .post p {
+        width: 85%;
+        font-size: 13px;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .actions {
+        width: 20%;
+        display: flex;
+        align-items: center;
+    }
+    #area-containers .bigger-block .container-posts ul.list-posts li .actions button.option {
+        width: 18px !important;
+        height: 30px;
+        font-size: 10.5px;
+        white-space: nowrap;
+        margin-right: 10px;
+    }
+    #area-containers .smaller-block .container-ranking .container-chart {
+        padding: 10px;
+    }
+}

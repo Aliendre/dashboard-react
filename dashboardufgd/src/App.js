@@ -1,5 +1,4 @@
-import Routes_Pages from "./routes";  
-import 'react-toastify/dist/ReactToastify.css';
+import Routes_Pages from "./routes";
 
 //MAIN STYLES
 import './styles/config.css';
