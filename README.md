@@ -12,6 +12,10 @@ react-chartjs-2@3.0.4\
 chartjs-plugin-gradient@0.2.1\
 react-window@1.8.6\
 
+### `AVISO!!!`
+
+Versão mobile inicialmente indisponivel
+
 ### `npm start`
 
 Runs the app in the development mode.\
