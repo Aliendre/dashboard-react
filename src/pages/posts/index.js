@@ -84,7 +84,7 @@ function Posts() {
         <section id="page">
             <Sidebar />
             <div className="main-content">
-                <Header pageName="Usuários" />
+                <Header pageName="Postagens" />
                 
                 <div id="area-page">
                     <motion.div 
