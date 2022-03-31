@@ -4,13 +4,13 @@ use "npm install" para instalação dos pacotes
 
 ## Bibliotecas
 
-react-router-dom@6.2.2.\
-axios@0.26.1.\
-framer-motion@6.2.8.\
-chart.js@3.5.1.\
-react-chartjs-2@3.0.4.\
-chartjs-plugin-gradient@0.2.1.\
-react-window@1.8.6.\
+react-router-dom@6.2.2\
+axios@0.26.1\
+framer-motion@6.2.8\
+chart.js@3.5.1\
+react-chartjs-2@3.0.4\
+chartjs-plugin-gradient@0.2.1\
+react-window@1.8.6\
 
 ### `npm start`
 
