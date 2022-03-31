@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from  'react-router-dom';
 //PAGES
 import Dashboard from '../pages/dashboard';
 import Users from '../pages/users';
+import Posts from '../pages/posts';
 
 
 const Routes_Pages = () => {
@@ -15,6 +16,7 @@ const Routes_Pages = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route exact path="/" element={<Dashboard />}/>
                     <Route exact path="/usuarios" element={<Users />}/>
+                    <Route exact path="/postagens" element={<Posts />}/>
                 </Routes>
             </AnimatePresence>          
         // </BrowserRouter>

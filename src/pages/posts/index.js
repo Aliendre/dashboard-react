@@ -13,10 +13,11 @@ import './styles/page.css';
 //API
 import api from "../../api";
 
-function Users() {
+function Posts() {
 
     //STATE
     const [users, setUsers] = useState([]);
+    const [posts, setPosts] = useState([])
     const [keyword, setKeyword] = useState('');
     //BOOLEANS
     const [modalUser, setModalUser] = useState(false);
@@ -28,12 +29,12 @@ function Users() {
 
 
     useEffect(() => {
-        api.get("/users")
+        api.get("/posts")
         .then((response) => {
-            setUsers(response.data);
+            setPosts(response.data);
         })
         .catch((err) => {
-            console.error("falha ao obter lista de usuários: " + err);
+            console.error("falha ao obter lista de postagens: " + err);
             toast.error('falha ao obter lista de postagens', {
                 position: "top-right",
                 autoClose: 5000,
@@ -49,7 +50,7 @@ function Users() {
     //BUSCAR USUÁRIO
     function searchingFor(keyword) {
         return function(item) {              
-            return item.name.toLowerCase().includes(keyword.toLowerCase()) || item.username.toLowerCase().includes(keyword.toLowerCase()) || item.email.toLowerCase().includes(keyword.toLowerCase()) || !keyword;
+            return item.title.toLowerCase().includes(keyword.toLowerCase()) || item.body.toLowerCase().includes(keyword.toLowerCase()) || !keyword;
         }
     }
 
@@ -66,7 +67,7 @@ function Users() {
                     transition={{duration: 0.5}}
                     exit={{y: 20}}
                     className="container">
-                        <h3>Usuários</h3>
+                        <h3>Postagens</h3>
                         
                         <div className="filter">
                             <input type="search" aria-label="Buscar usuário" value={keyword} onChange={(e)=>setKeyword(e.currentTarget.value)} placeholder="Buscar usuário" /> 
@@ -91,7 +92,7 @@ function Users() {
                         </div>
 
                         <ul className="list-users">
-                            {users.filter(searchingFor(keyword)).map((item, index)=> {
+                            {posts.filter(searchingFor(keyword)).map((item, index)=> {
                                 return (
                                     <li key={index}>
                                         <div className="item name">
@@ -139,4 +140,4 @@ function Users() {
     )
 }
 
-export default Users;
+export default Posts;

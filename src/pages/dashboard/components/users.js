@@ -5,13 +5,15 @@ function Users(props) {
 
     //STATES
     const [keyword, setKeyword] = useState('');
-
+    
     //BUSCAR USUÁRIO
     function searchingFor(keyword) {
         return function(item) {              
             return item.username.toLowerCase().includes(keyword.toLowerCase()) || item.email.toLowerCase().includes(keyword.toLowerCase()) || !keyword;
         }
     }
+
+    
 
     return (
         <motion.div 
