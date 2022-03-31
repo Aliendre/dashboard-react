@@ -58,7 +58,7 @@ function Comments() {
         <section id="page">
             <Sidebar />
             <div className="main-content">
-                <Header pageName="Usuários" />
+                <Header pageName="Comentários" />
                 
                 <div id="area-page">
                     <motion.div 
