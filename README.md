@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Instalação
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+use "npm install" para instalação dos pacotes
 
-## Available Scripts
+## Bibliotecas
 
-In the project directory, you can run:
+react-router-dom@6.2.2
+axios@0.26.1
+framer-motion@6.2.8
+chart.js@3.5.1
+react-chartjs-2@3.0.4
+chartjs-plugin-gradient@0.2.1
+react-window@1.8.6
 
 ### `npm start`
 
