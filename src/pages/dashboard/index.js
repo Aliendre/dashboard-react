@@ -28,6 +28,7 @@ function Dashboard() {
     //PARAMS
     const [filterId, setFilterId] = useState(null);
     const [typeFilter, setTypeFilter] = useState('p');
+    const [typeQuery, setTypeQuery] = useState('s');
     const [postId, setPostId] = useState(null);
     const [userId, setUserId] = useState(null);
     //BOOLEANS
@@ -123,11 +124,12 @@ function Dashboard() {
                             setModalComments={setModalComments}
                             setModalPost={setModalPost}
                             setPostId={setPostId}
+                            setTypeQuery={setTypeQuery}
                         />
 
                     </div>
                     <div className="smaller-block">
-                        <Users users={users} setModalUser={setModalUser} setUserId={setUserId} />
+                        <Users users={users} setModalUser={setModalUser} setUserId={setUserId} setModalPost={setModalPost} setPostId={setPostId} setTypeQuery={setTypeQuery} />
                         <Ranking users={users} posts={persistPosts} setModalUser={setModalUser} setUserId={setUserId} />
                     </div>
                 </div>
@@ -153,6 +155,7 @@ function Dashboard() {
                 type="posts"
                 size="medium"
                 postId={postId}
+                typeQuery={typeQuery}
             />
 
             <ToastContainer theme="colored" />

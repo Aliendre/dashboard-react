@@ -69,7 +69,7 @@ function Posts(props) {
                             <span>Ver comentários</span>
                         </button>
                     :
-                        <button aria-label="ver comentários" className="option highlighted" onClick={()=>{props.setModalPost(true);props.setPostId(props.posts[index].id)}} title="ver comentários">
+                        <button aria-label="ver comentários" className="option highlighted" onClick={()=>{props.setTypeQuery('s');props.setModalPost(true);props.setPostId(props.posts[index].id)}} title="ver comentários">
                             <span>Ver postagem</span>
                         </button>
                     }
@@ -94,13 +94,13 @@ function Posts(props) {
                         <button aria-label="filtrar por postagens" title="filtrar por postagens" className={`option ${props.typeFilter==='p'?'active':''}`} onClick={()=>props.setTypeFilter('p')}>     
                             <span>Postagens</span>
                         </button>
-                        <button aria-label="filtrar por comentários" title="filtrar por comentários" className={`option ${props.typeFilter==='c'?'active':''}`} onClick={()=>props.setTypeFilter('c')}>
+                        <button aria-label="filtrar por comentários" title="filtrar por comentários" className={`option ${props.typeFilter==='c'?'active':''}`} onClick={()=>{props.setTypeFilter('c');props.setKeyword('')}}>
                             <span>Comentários</span>
                         </button>
                     </div>
                 </div>
                 <div className="filter-input">
-                    <input type="search" aria-label="Filtrar por usuário" value={props.keyword} onChange={(e)=>props.setKeyword(e.currentTarget.value)} onClick={()=>setOpenSelect(true)} placeholder="Filtrar por usuário" /> 
+                    <input type="search" aria-label="Filtrar por usuário" disabled={props.typeFilter==='c'&&true} value={props.keyword} onChange={(e)=>props.setKeyword(e.currentTarget.value)} onClick={()=>setOpenSelect(true)} placeholder="Filtrar por usuário" /> 
                     {openSelect&& (
                         <div className="container-select" ref={listSelect}>
                             {props.users.map(({id, username})=>{

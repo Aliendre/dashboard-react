@@ -56,17 +56,17 @@ function Modal(props) {
                         stiffness: 120,
                         delay: .2
                     }}
-                    className={`container-modal ${props.size}`}>
+                    className={`container-modal ${props.size} ${props.typeQuery==='m'?'scrollable':''}`}>
                         <button className='close-modal' onClick={()=>props.trigger(false)}><i class="fi fi-rr-cross"></i></button>
                         
                         {props.type==='user' && (
                             <User userId={props.userId} />
                         )}
                         {props.type==='comments' && (
-                            <Comments postId={props.postId} />
+                            <Comments postId={props.postId} typeQuery={props.typeQuery} />
                         )}
                         {props.type==='posts' && (
-                            <Posts postId={props.postId} />
+                            <Posts postId={props.postId} typeQuery={props.typeQuery} />
                         )}
                         
 

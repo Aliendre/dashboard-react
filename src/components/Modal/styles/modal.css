@@ -13,10 +13,15 @@
     width: 60%;
     height: auto;
     min-height: 200px;
+    max-height: 90vh;
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
     position: relative;
+}
+#area-modal .container-modal.scrollable {
+    height: 90vh;
+    overflow: hidden;
 }
 #area-modal .container-modal.small {
     width: 40%;
@@ -152,6 +157,9 @@
     height: calc(100% - 50px);
     overflow-y: auto;
     padding-top: 5px;
+}
+#area-modal .container-modal.scrollable .content-modal ul.list-comments {
+    height: 800px;
 }
 
 #area-modal .container-modal .content-modal ul.list-comments li {

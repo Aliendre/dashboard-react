@@ -11,7 +11,7 @@ function Posts(props) {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        api.get(`/posts?id=${props.postId}`)
+        api.get(props.typeQuery==='m'? `/posts?userId=${props.postId}` : `/posts?id=${props.postId}`)
         .then((response) => {
             setComments(response.data);
         })

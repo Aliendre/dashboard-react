@@ -38,7 +38,7 @@ function Users(props) {
                                 <div className="actions">
                                     <p aria-label="telefone para contato" title="telefone para contato">{phone.split(" ")[0]}</p>
                                     <div className="options">
-                                        <button aria-label="postagens do usuário" className="option" title="postagens do usuário">
+                                        <button aria-label="postagens do usuário" className="option" onClick={()=>{props.setTypeQuery('m');props.setModalPost(true);props.setPostId(id)}} title="postagens do usuário">
                                             <i className="fi fi-rr-document"></i>
                                         </button>
                                         {/* <button aria-label="comentários do usuário" className="option" title="comentários do usuário">
